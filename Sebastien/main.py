@@ -8,8 +8,8 @@ from get_img import *
 from aruco_angle import *
 from insert_Image import *
 import cv2.aruco as aruco
-#from get_robot_coords import *
-#from robot_control import *
+from get_robot_coords import *
+from robot_control import *
 #from config import *
 
 dick = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50)
@@ -91,8 +91,13 @@ while True:
     try: field_copy_copy = insert_rotated_image(field_copy_copy,aruco,angle,(dot_y, dot_x))
     except Exception as e:
         print(e)
-
-    
+    try:
+        get_robot_c = get_robot_coords(((dot_x,dot_y),))
+        print(get_robot_c)
+    except Exception as e:
+        print(e)
+        
+    print(get_robot_c)
     cv2.imshow("field", field_copy)
     cv2.imshow("visualization", field_copy_copy)
     cv2.imshow("img", frame)
