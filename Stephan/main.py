@@ -16,6 +16,13 @@ FORCE_HOMOGRAPHY_CACHE = False
 
 if __name__ == "__main__":
     config = Config()
+    # Initalize two UR3 robots
+    manipulator_discharged = UR3Client("discharged")
+    manipulator_discharged.home()
+    manipulator_discharged.cube_static()
+    # time.sleep(100)
+    # manipulator_right = UR3Client()
+
     FORCE_HOMOGRAPHY_CACHE = config.force_cache_use
 
     if config.homography_cache_path:
@@ -27,9 +34,7 @@ if __name__ == "__main__":
             logging.warning(
                 f"Can't load file {config.homography_cache_path}; No such file")
     camera = CameraClient(config.camera_ip, config.camera_port, False)
-    # Initalize two ur3 robots
-    manipulator_left = UR3Client()
-    manipulator_right = UR3Client()
+    
     field = Field(camera.K, camera.D)
 
     visualize = Visualize()
@@ -91,6 +96,7 @@ if __name__ == "__main__":
             for battery in field.batteries:
                 if field.batteries[battery]:
                     logging.info(field.batteries[battery])
+                    logging.info(manipulator_discharged.get_robot_coords(field.batteries[battery].mm_coordinates))
         elif key == ord('b'):
             # Simulate changing battery
             pass

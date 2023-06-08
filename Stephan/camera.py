@@ -60,7 +60,7 @@ class CameraClient:
 
 
 if __name__ == "__main__":
-    camera = CameraClient("192.168.0.222", 9988)
+    camera = CameraClient("192.168.2.237", 9988)
     while True:
         frame = camera.get_frame()
         cv2.imshow("img", frame)

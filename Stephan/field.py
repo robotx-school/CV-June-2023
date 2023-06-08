@@ -59,10 +59,10 @@ class Field:
                     M = cv2.moments(c)
                     cX = int(M["m10"] / M["m00"])
                     cY = int(M["m01"] / M["m00"])
-                    if cY <= 230:
-                        cY *= 1.1
-                    else:
-                        cY *= 0.9
+                    # if cY <= 230:
+                    #     cY *= 1.1
+                    # else:
+                    #     cY *= 0.9
                     center_px = (cX, int(cY))
                     center_mm = self.px_to_mm(*center_px)
                     x1, y1, x2, y2, x3, y3, x4, y4 = c.flatten()
@@ -113,8 +113,11 @@ class Field:
         #     # Debug image
         #     _, self.image, self.homography = None, cv2.imread(
         #         "1685952769.873377.jpg"), None
+
         _, self.image, self.homography = get_field(
-                image, use_cache, cache_homography)
+            image, use_cache, cache_homography)
+        
+        # self.image = cv2.flip(self.image, 1)
 
         gray = cv2.cvtColor(self.image, cv2.COLOR_BGR2GRAY)
         self.found_markers = cv2.aruco.detectMarkers(
@@ -180,7 +183,8 @@ class Field:
                     x2, y2 = self.robots[zone].get_center()
                     delta = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
                     if delta < 2:
-                        if self.robots[zone].statis_frames_count <= 40: # Prevent overflow for long sessions
+                        # Prevent overflow for long sessions
+                        if self.robots[zone].statis_frames_count <= 40:
                             self.robots[zone].statis_frames_count += 1
                     else:
                         self.robots[zone].statis_frames_count = 0
