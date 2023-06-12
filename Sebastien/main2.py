@@ -27,6 +27,8 @@ with open('param.txt') as f:
     D = eval(f.readline())
 
 xtra=100
+x_mm = 0#600mm
+y_mm = 0#400mm
 while True:
     field_copy = cv2.resize(field,(640, 480)) # creates copy of field
     frame = get_image() # get frame from camera
@@ -43,22 +45,24 @@ while True:
     cv2.imshow('r', right)
     print('res_shape',res_img.shape)
     
-    img_bin_l = cv2.inRange(left, h_min, h_max) # cropped black and white version
-    bitwiseNot_l = cv2.bitwise_not(img_bin_l) # invert img_bin
-    cv2.imshow('ChargingZoneSector1', img_bin_l) # show img_bin
-    cv2.imshow('bitwiseNot', bitwiseNot_l) # show bitwiseNot
-    summa = np.sum(bitwiseNot_l, axis=1) # creates an array of sum values
+    img_bin_r = cv2.inRange(right, h_min, h_max) # cropped black and white version
+    bitwiseNot_r = cv2.bitwise_not(img_bin_r) # invert img_bin
+    cv2.imshow('ChargingZoneSector1', img_bin_r) # show img_bin
+    cv2.imshow('bitwiseNot', bitwiseNot_r) # show bitwiseNot
+    summa = np.sum(bitwiseNot_r, axis=1) # creates an array of sum values
     print("SUMMA IS :",summa) # prints summa
     dafk = np.where(summa>10000) # coordinates of values over 10000
     print("DAFK IS: ",len(dafk[0])) # prints dafk
     if len(dafk[0])>1: # if at least 2 red pixels exist
+        '''
         cv2.rectangle(res_img, # visualize rectangle on display
                       (100,dafk[0][0]), 
                       (310,dafk[0][len(dafk[0])-1]),
                       (0,0,255), -1)
+        '''
         cv2.rectangle(field_copy,
-                      (100,dafk[0][0]),
-                      (310,dafk[0][len(dafk[0])-1]),
+                      (320,dafk[0][0]),
+                      (520,dafk[0][len(dafk[0])-1]),
                       (0,0,255), -1)
 
     # if aruco found returns angle, x, y. if not found returns None,None,None
@@ -85,12 +89,16 @@ while True:
             print('angle: ',abs(angle_r))
         else:
             print('angle: ',abs(angle_r)-90)
-        cv2.circle(field_copy, (dot_x_r+320, dot_y_r), 10, (255,255,255), thickness=-1)#draws a circle in the center of the aruco marker
+        cv2.circle(field_copy, (dot_x_r+320, dot_y_r), 80, (255,255,255), thickness=-1)#draws a circle in the center of the aruco marker
         field_copy = insert_rotated_image(field_copy,aruco,angle_r,(dot_y_r, dot_x_r+320))
         get_robot_c = get_robot_coords(((dot_x_r+320,dot_y_r),))
         print(get_robot_c)
-    
-            
+        x_mm = 600*(dot_x_r+320)/640#600mm
+        y_mm = 400*(480-dot_y_r)/480#400mm
+        print('x_mm',x_mm)
+        print('y_mm',y_mm)
+        test = get_robot_coords(((x_mm,y_mm),))
+        print("test",test)
     # creates windows    
     cv2.imshow('warp',res_img)
     cv2.imshow("field", field_copy)

@@ -10,7 +10,7 @@ def find_aruco_rotation(res_img):
     res = cv2.aruco.detectMarkers(gray, dictionary)
 
     marker=17
-    
+    print("arucores start",res[1],"arucos end")
     if res[1] is not None and marker in res[1]:
     
         index=np.where(res[1]==marker)[0][0]

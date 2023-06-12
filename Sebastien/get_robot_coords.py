@@ -10,5 +10,5 @@ def get_robot_coords(coords_orange):
         robot_coords_orange.append((x_r,y_r))
     
     return robot_coords_orange
-test = get_robot_coords(((734,432),))  
-print(test)
+#test = get_robot_coords(((734,432),))  
+#print(test)test = get_robot_coords(((734,432),))  
