@@ -11,7 +11,7 @@ def create_picture():
     window = np.zeros((500,1000,3), dtype='uint8')
     cv2.circle(window, (500,500), 100, (125, 125, 0), thickness=-11)
     cv2.circle(window, (500,500), 500, (20, 75, 9), thickness=1)
-    #cv2.rectangle(window,(500-143), 100, (100, 300), (255,255,255), 5)
+
     return window
 
 
@@ -32,7 +32,7 @@ def warp_da(frame):
     c=[]
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     res = cv2.aruco.detectMarkers(gray, dick)
-    if res[1] is not None and (0 in res[1]) and (1 in res[1])and (2 in res[1]) and (3 in res[1]):
+    if res[1] is not None and (0 in res[1]) and (1 in res[1]) and (2 in res[1]) and (3 in res[1]):
         for i in range(4):
             
             marker=i
