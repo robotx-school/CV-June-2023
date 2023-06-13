@@ -6,7 +6,7 @@
 
 #EVERYBODY put your code here in a folder with your name :)
 
-* VISUALIZATION -- Sebastien
+* LOH -- Sebastien
 * LINEAR FUNCTION WAPR -- Vanya & Petr
 * FIND LOCATION OF ARUCO MARKER ON BOARD -- Leonid
 * Dividing PHOTO into parts -- Makskim & Artem
