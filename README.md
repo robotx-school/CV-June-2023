@@ -7,9 +7,10 @@
 #EVERYBODY put your code here in a folder with your name :)
 * get robot coords -- Peter/ status: done
 * VISUALIZATION & ARUCO angle FINDER -- Sebastien /status: done
-* LINEAR FUNCTION WARP -- Vanya & Petr /status:
-* FIND LOCATION OF ARUCO MARKER ON BOARD -- Leonid /status:
-* Dividing PHOTO into parts -- Makskim & Artem /status:
+* WARP -- Vanya & Petr /status: done
+* extra* LINEAR FUNCTION WARP -- Vanya & Petr /status: not done
+* FIND LOCATION OF ARUCO MARKER ON BOARD -- Leonid /status: not done
+* Dividing PHOTO into parts -- Makskim & Artem /status: done
 
 BETTER VISUALIZATION
 --------------------
