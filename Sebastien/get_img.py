@@ -5,7 +5,7 @@ import cv2
 
 def get_image():
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    host_ip = '192.168.2.237'
+    host_ip = '192.168.0.222'
     port = 9988
     client_socket.connect((host_ip, port))
 

@@ -7,7 +7,7 @@ import time
 
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-host_ip = "192.168.2.237"
+host_ip = "192.168.0.222"
 port = 9988
 socket_address = (host_ip, port)
 
