@@ -56,21 +56,21 @@ while True:
     angle_test, dot_x_test, dot_y_test = find_aruco_rotation(test)
     
     if angle_r is not None: # if aruco found
-        '''
+        
         if 0<=abs(angle_r)<=90:
-            print('angle: ',abs(angle_r))
+            angle_r = abs(angle_r)
         else:
-            print('angle: ',abs(angle_r)-90)
-        '''    
+            angle_r = abs(angle_r)-90
+        
         
         
         cv2.circle(field_copy, (dot_x_r+320, dot_y_r), 80, (255,255,255), thickness=-1)#draws a circle in the center of the aruco marker
         field_copy = insert_rotated_image(field_copy,aruco,angle_r,(dot_y_r, dot_x_r+320))
-        get_robot_c = get_robot_coords(((dot_x_r+320,dot_y_r),))
+        get_robot_c = get_robot_coords([dot_x_r+320,dot_y_r])
 
         
-        x_mm = 600*(dot_x_r+320)/640#600mm
-        y_mm = 400*(dot_y_r)/480#400mm
+        x_mm = 590*(dot_x_r+320)/640 + 5#600mm
+        y_mm = 390*(dot_y_r)/480     + 5#400mm
 
         
         field_copy = cv2.putText(field_copy, 'x mm: '+str(x_mm),
@@ -86,7 +86,7 @@ while True:
 
 
 
-        robot_coords = get_robot_coords(((x_mm,y_mm),))
+        robot_coords = get_robot_coords([x_mm,y_mm])
         field_copy = cv2.putText(field_copy, str(robot_coords),
                                  (dot_x_r+160, dot_y_r+40),
                                  cv2.FONT_HERSHEY_SIMPLEX,
@@ -94,11 +94,11 @@ while True:
 
 
 
-
+    
     if angle_test is not None:
         print()
-        x_mm_test = 600*(dot_x_test)/640#600mm
-        y_mm_test = 400*(dot_y_test)/480#400mm
+        x_mm_test = 590*(dot_x_test)/640 + 5 #600mm
+        y_mm_test = 390*(dot_y_test)/480 + 5 #400mm
         field_copy = cv2.putText(field_copy, str(x_mm_test)+' '+str(y_mm_test),
                                  (dot_x_test+160, dot_y_test+80),
                                  cv2.FONT_HERSHEY_SIMPLEX,
@@ -108,13 +108,13 @@ while True:
         print(get_robot_coords([x_mm_test,y_mm_test]))
         print()
 
-        '''
+        
         robot_coords_test = get_robot_coords(((x_mm_test,y_mm_test),))
         field_copy = cv2.putText(field_copy, str(robot_coords_test),
                                  (dot_x_test+160, dot_y_test+80),
                                  cv2.FONT_HERSHEY_SIMPLEX,
                                  0.5, (0,0,100), 1, cv2.LINE_AA)
-        '''
+        
 
 
     # creates windows    
