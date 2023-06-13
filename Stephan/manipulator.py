@@ -57,8 +57,14 @@ class UR3Client:
         else:
             logging.error("Robot not connected")
 
+    def safe_move(self, coords):
+        if self.robot:
+            pass
+
+
     def home(self):
-        self.robot.movel(self.home_position, acc=self.acc, vel=self.speed, wait=True)
+        # self.go()
+        # self.robot.movel(self.home_position, acc=self.acc, vel=self.speed, wait=True)
 
     def cube_static(self):
         self.robot.movel(self.static_cube_position, acc=self.acc, vel=self.speed, wait=True)

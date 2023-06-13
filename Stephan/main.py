@@ -19,7 +19,7 @@ if __name__ == "__main__":
     # Initalize two UR3 robots
     manipulator_discharged = UR3Client("discharged")
     manipulator_discharged.home()
-    manipulator_discharged.cube_static()
+    # manipulator_discharged.cube_static()
     # time.sleep(100)
     # manipulator_right = UR3Client()
 
