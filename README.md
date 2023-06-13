@@ -9,6 +9,7 @@
 * VISUALIZATION -- Sebastien
 * LINEAR FUNCTION WAPR -- Vanya & Petr
 * FIND LOCATION OF ARUCO MARKER ON BOARD -- Leonid
+* Dividing PHOTO into parts -- Makskim & Artem
 
 BETTER VISUALIZATION
 --------------------
