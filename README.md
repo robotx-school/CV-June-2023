@@ -5,11 +5,11 @@
 # CV June 2023
 
 #EVERYBODY put your code here in a folder with your name :)
-
-* LOH -- Sebastien
-* LINEAR FUNCTION WAPR -- Vanya & Petr
-* FIND LOCATION OF ARUCO MARKER ON BOARD -- Leonid
-* Dividing PHOTO into parts -- Makskim & Artem
+* get robot coords -- Peter/ status: done
+* VISUALIZATION & ARUCO angle FINDER -- Sebastien /status: done
+* LINEAR FUNCTION WAPR -- Vanya & Petr /status:
+* FIND LOCATION OF ARUCO MARKER ON BOARD -- Leonid /status:
+* Dividing PHOTO into parts -- Makskim & Artem /status:
 
 BETTER VISUALIZATION
 --------------------
