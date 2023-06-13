@@ -11,7 +11,7 @@ def find_aruco_rotation(res_img):
 
     marker=17
     print("arucores start",res[1],"arucos end")
-    if res[1] is not None and marker in res[1]:
+    if res[1] is not None and marker in res[1]:# a bunch of math basically
     
         index=np.where(res[1]==marker)[0][0]
         
@@ -29,4 +29,4 @@ def find_aruco_rotation(res_img):
         
         return angle_deg, int(dot_x), int(dot_y)
     else:
-        return None, None, None
+        return None, None, None # if no marker return none

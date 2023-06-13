@@ -4,11 +4,12 @@ import time
 import os
 import numpy as np
 import math
-from manipulate_img import *
+import cv2.aruco as aruco
+from visualization import *
 from get_img import *
 from aruco_angle import *
 from insert_Image import *
-import cv2.aruco as aruco
+from manipulate_img import *
 from get_robot_coords import *
 #from robot_control import *
 field = cv2.imread('field.jpg')# imports field.jpg
@@ -21,7 +22,6 @@ use = 0
 xtra = 100
 x_mm = 0#600mm
 y_mm = 0#400mm
-
 
 while True:
     
@@ -57,41 +57,8 @@ while True:
     
     if angle_r is not None: # if aruco found
         
-        if 0<=abs(angle_r)<=90:
-            angle_r = abs(angle_r)
-        else:
-            angle_r = abs(angle_r)-90
         
-        
-        
-        cv2.circle(field_copy, (dot_x_r+320, dot_y_r), 80, (255,255,255), thickness=-1)#draws a circle in the center of the aruco marker
-        field_copy = insert_rotated_image(field_copy,aruco,angle_r,(dot_y_r, dot_x_r+320))
-        get_robot_c = get_robot_coords([dot_x_r+320,dot_y_r])
-
-        
-        x_mm = 590*(dot_x_r+320)/640 + 5#600mm
-        y_mm = 390*(dot_y_r)/480     + 5#400mm
-
-        
-        field_copy = cv2.putText(field_copy, 'x mm: '+str(x_mm),
-                                 (dot_x_r+160, dot_y_r),
-                                 cv2.FONT_HERSHEY_SIMPLEX,
-                                 0.5, (0,0,0), 1, cv2.LINE_AA)
-
-        
-        field_copy = cv2.putText(field_copy, 'y mm: '+str(y_mm),
-                                 (dot_x_r+160, dot_y_r+20),
-                                 cv2.FONT_HERSHEY_SIMPLEX,
-                                 0.5, (0,0,0), 1, cv2.LINE_AA)
-
-
-
-        robot_coords = get_robot_coords([x_mm,y_mm])
-        field_copy = cv2.putText(field_copy, str(robot_coords),
-                                 (dot_x_r+160, dot_y_r+40),
-                                 cv2.FONT_HERSHEY_SIMPLEX,
-                                 0.5, (0,0,0), 1, cv2.LINE_AA)
-
+        field_copy = vis(field_copy,dot_x_r,dot_y_r,aruco,angle_r)
 
 
     
