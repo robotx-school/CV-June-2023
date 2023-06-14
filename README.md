@@ -5,12 +5,11 @@
 # CV June 2023
 
 #EVERYBODY put your code here in a folder with your name :)
-- [x] get robot coords -- Peter
-- [x] VISUALIZATION & ARUCO angle FINDER -- Sebastien
-- [x] WARP -- Vanya & Peter
-- [ ] extra* LINEAR FUNCTION WARP -- Vanya & Petr
-- [ ] FIND LOCATION OF ARUCO MARKER ON BOARD -- Leonid
-- [x] Dividing PHOTO into parts -- Makskim & Artem
+
+- [ ] VISUALIZATION -- Sebastien
+- [ ] RobotControl -- Stas, Maks Artem
+- [ ] нахогдение нигнеи грани и комплексирование Леныа
+
 
 BETTER VISUALIZATION
 --------------------
