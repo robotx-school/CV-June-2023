@@ -7,7 +7,8 @@
 #EVERYBODY put your code here in a folder with your name :)
 
 - [ ] VISUALIZATION -- Sebastien
-- [ ] RobotControl -- Stas, Maks Artem
+- [ ] 
+- [ ] RobotControl, пересчет в координат робота -- Stas, Maks Artem
 - [ ] нахогдение нигнеи грани и комплексирование Леныа
 
 
