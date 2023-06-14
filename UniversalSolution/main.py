@@ -23,8 +23,8 @@ while True:
     image_set = split_image(field_img,image_split_coords)
     robot_right_top, robot_right_bottom = find_robot(image_set['robot_right'])
     robot_left_top, robot_left_bottom = find_robot(image_set['robot_left'])
-    right_robot_battery = find_robot_battery(image_set['robot_right'])
-    left_robot_battery = find_robot_battery(image_set['robot_left'])
+    right_robot_battery = find_robot_battery(image_set['robot_right'],17,ARUCO_DICT)
+    left_robot_battery = find_robot_battery(image_set['robot_left'],17,ARUCO_DICT)
     #field_coord_right_robot_battery =
     #field_coord_left_robot_battery = 
 
