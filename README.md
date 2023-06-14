@@ -11,6 +11,7 @@
 - [ ] нахогдение нигнеи грани и комплексирование Леныа
 - [ ] 
 
+pip install opencv-contrib-python==3.4.18.65
 
 BETTER VISUALIZATION
 --------------------
