@@ -208,3 +208,4 @@ if __name__ == "__main__":
         {"is_bat_charged_up": False},
         {"is_bat_discharged_up": True}
     ]
+    d.robot_control(data, robotright, robotleft)
