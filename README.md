@@ -6,7 +6,7 @@
 
 #EVERYBODY put your code here in a folder with your name :)
 
-- [ ] LOH -- Sebastien
+- [ ]  визуализация-- Sebastien
 - [ ] RobotControl, пересчет в координат робота -- Stas, Maks Artem
 - [ ] нахогдение нигнеи грани и комплексирование Леныа
 - [ ] 
@@ -106,3 +106,4 @@ Home:
 0.03631844607102951]
 
 
+гитчуб
