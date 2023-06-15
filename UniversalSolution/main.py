@@ -67,6 +67,7 @@ while True:
     visualizer.draw_robot([(100, 100), (150, 150)])  
     visualizer.draw_marker(100, 100, 17, 45)                                                         
     cv2.imshow("Visualization", visualizer.image)
+    cv2.imshow("Main", frame)
     key = cv2.waitKey(10) & 0xFF
     if key == ord('q'):
         break
