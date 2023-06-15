@@ -3,6 +3,10 @@ def list_average(*args : list) -> list:
     """Returns a xy-list of the average
     values of all xy-lists.
 
+    You can use:
+    list_average(e_cam2map_convert(img, ...),
+                 l_cam2map_convert(coords, ...))
+
     Positional arguments:
     *args - lists to get average data"""
     x, y = [], []
