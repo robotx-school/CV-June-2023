@@ -12,7 +12,7 @@ class Visualize:
         # cv2.line(self.image, (101, 0), (101, 793), (20, 0, 255), 1)
         # cv2.line(self.image, (1091, 0), (1091, 793), (20, 0, 255), 1)
         self.image = self.image[11: 11 + 378, 11: 11 + 578]
-        self.image = cv2.resize(self.image, (580, 380))
+        self.image = cv2.resize(self.image, (640, 480))
         self.image_fallback = self.image.copy()
         print(self.image.shape)
         self.border_size = 200

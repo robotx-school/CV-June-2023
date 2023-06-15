@@ -13,14 +13,3 @@ image_split_coords = {'robot_left_l_x': 90,
                       'robot_left_r_x':320,
                       'robot_right_l_x':320,
                       'robot_right_r_x':550}
-
-robotleft = [
-    {"home": {"x": 10, "y": 10, "z": 10, "a": 360, "b": 360, "c": 360},
-     "discharged_up": {"x": 10, "y": 10, "z": 10, "a": 360, "b": 360, "c": 360},
-     "discharged_down": {"x": 10, "y": 10, "z": 10, "a": 360, "b": 360, "c": 360}}
-]
-robotright = [
-    {"home": {"x": 10, "y": 10, "z": 10, "a": 360, "b": 360, "c": 360},
-     "charged_up": {"x": 10, "y": 10, "z": 10, "a": 360, "b": 360, "c": 360},
-     "charged_down": {"x": 10, "y": 10, "z": 10, "a": 360, "b": 360, "c": 360}}
-]

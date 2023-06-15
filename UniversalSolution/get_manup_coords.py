@@ -14,6 +14,6 @@ def get_r_manup_cords(x_y):
     offset_y = 200
     x, y = x_y[0], x_y[1]
     x_r, y_r = y + offset_y, x + offset_x
-    r_manup_coords.append(x_r, y_r)
+    r_manup_coords.append(x_r)
     r_manup_coords.append(y_r)
     return r_manup_coords
