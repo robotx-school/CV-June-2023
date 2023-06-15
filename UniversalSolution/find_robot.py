@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 
 def find_robot(robot_zone_img):
-    h_min = (0, 140, 173)
-    h_max = (255, 255, 255)
+    h_min = (0, 108, 170)
+    h_max = (15, 255, 255)
     img_bin_r = cv2.inRange(robot_zone_img, h_min, h_max) 
     kernel = np.ones((5, 5), 'uint8')
     thresh = cv2.erode(img_bin_r, kernel, iterations=4)
