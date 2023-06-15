@@ -6,13 +6,23 @@ from typing import List
 
 class Visualize:
     def __init__(self) -> None:
-        self.image = cv2.imread("field.jpg")
+        self.image = cv2.imread("field_base.jpg")
         self.image = cv2.resize(self.image, (600, 400))
+        # cv2.line(self.image, (22, 0), (22, 793), (20, 0, 255), 1)
+        # cv2.line(self.image, (101, 0), (101, 793), (20, 0, 255), 1)
+        # cv2.line(self.image, (1091, 0), (1091, 793), (20, 0, 255), 1)
         self.image = self.image[11: 11 + 378, 11: 11 + 578]
         self.image = cv2.resize(self.image, (580, 380))
         self.image_fallback = self.image.copy()
         print(self.image.shape)
         self.border_size = 200
+
+        '''
+        Field size mm:
+        400 x 600
+        Robot Size:
+        200 x 150
+        '''
 
     def add_border(self) -> None:
         self.image = cv2.copyMakeBorder(src=self.image, top=self.border_size, bottom=self.border_size,
@@ -79,6 +89,7 @@ class Visualize:
         self.image = self.merge_image(new_field, aruco_image, x - 25, y - 25)
 
     def draw_robot(self, robot_rect: List[tuple]) -> None:
+        # print(robot_rect)
         x1, y1 = robot_rect[0]
         x4, y4 = robot_rect[-1]
         x, y, w, h = x1, y1, (x4 - x1), (y4 - y1)
@@ -99,4 +110,3 @@ if __name__ == "__main__":
         key = cv2.waitKey(0) & 0xFF
         if key == 27:
             break
-

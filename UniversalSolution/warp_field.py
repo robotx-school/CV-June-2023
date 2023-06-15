@@ -12,8 +12,13 @@ def warp_field(img,aruco_dict):
             pt0 = res[0][index][0][marker].astype(np.int16)
             coords[i] = list(pt0)
     if coords != [0,0,0,0]:
-        with open("FieldCoords.txt","w",encoding = "utf-8") as file:
+        with open("123.txt","w",encoding = "utf-8") as file:
             file.write(str(coords))
+
+
+    else:
+        with open("123.txt","r",encoding = "utf-8") as file:
+            coords = eval(file.readline())
     height, weight, _ = img.shape
     input_pt = np.array(coords)
     output_pt = np.array([[0,0],[weight,0],[weight,height],[0,height]])

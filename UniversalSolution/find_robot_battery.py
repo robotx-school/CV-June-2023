@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-def find_robot_battery(robot_zone_img,num, dictionary):
+def find_robot_battery(robot_zone_img,num,dictionary):
     gray2 = cv2.cvtColor(robot_zone_img,cv2.COLOR_BGR2GRAY)
     res2 = cv2.aruco.detectMarkers(gray2,dictionary)
     output = []
@@ -14,7 +14,6 @@ def find_robot_battery(robot_zone_img,num, dictionary):
             pt2 = res2[0][index][0][2].astype(np.int16)
             pt3 = res2[0][index][0][3].astype(np.int16)
             center = [(pt0[0] + pt2[0])//2,(pt0[1] + pt2[1])//2]
-            center[0] = center[0] + 320
             tmp_angle = 0
             kat_0 = pt1[0] - pt0[0]
             kat_1 = pt1[1] - pt0[1]
