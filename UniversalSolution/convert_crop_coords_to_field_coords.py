@@ -1,19 +1,11 @@
 
-def robot_right_top(c):
+def get_correct_coordinates(l,a):
     
-    return [[c[0][0]+550, c[0][1]],c[1],c[2],c[3],c[4],c[5]]
+    return [[c[0][0]+550, c[0][1]],
+            c[1],
+            [c[2][0]+a,c[2][1]],
+            [c[3][0]+a,c[3][1]],
+            [c[4][0]+a,c[4][1]],
+            [c[5][0]+a,c[5][1]]
 
-def robot_right_bottom(c):
-    return [[c[0][0]+550, c[0][1]+240],c[1],c[2],c[3],c[4],c[5]]
 
-def robot_left_top(c):
-    return [[c[0][0], c[0][1]],c[1],c[2],c[3],c[4],c[5]]
-
-def robot_left_bottom(c):
-    return [[c[0][0], c[0][1]+240],c[1],c[2],c[3],c[4],c[5]]
-
-def right_robot_battery(c):
-    return [[c[0][0]+90, c[0][1]],c[1],c[2],c[3],c[4],c[5]]
-
-def left_robot_battery(c):
-    return [[c[0][0]+320, c[0][1]],c[1],c[2],c[3],c[4],c[5]]
