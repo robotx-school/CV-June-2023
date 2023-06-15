@@ -6,7 +6,7 @@
 
 #EVERYBODY put your code here in a folder with your name :)
 
-- [x] field coords -- Sebastien
+- [x] field coords -- Sebastien - Мунаджер
 - [ ] RobotControl, пересчет в координат робота -- Stas, Maks Artem
 - [ ] нахогдение нигнеи грани и комплексирование Леныа
 - [ ] 
