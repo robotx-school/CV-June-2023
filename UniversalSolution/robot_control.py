@@ -1,4 +1,3 @@
-from get_robot_coords import get_l_robot_cords, get_r_robot_cords
 from config import *
 import urx, time
 import numpy as np
