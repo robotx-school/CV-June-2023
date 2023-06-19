@@ -9,6 +9,8 @@
 New: [0.1108634530794939, -0.08892304885884085, 0.3385760801340761, 2.156131292945468, 2.207640399842002, -0.023220213819268334]
 
 
+NEW [0.04296983079787211, -0.16314794573917965, 0.1730807039791688, -2.1223205010505057, 2.2437465531073446, 0.04561178965761669]
+
 https://www.zacobria.com/universal-robots-knowledge-base-tech-support-forum-hints-tips-cb2-cb3/index.php/python-code-example-of-converting-rpyeuler-angles-to-rotation-vectorangle-axis-for-universal-robots/
 
 #EVERYBODY put your code here in a folder with your name :)
