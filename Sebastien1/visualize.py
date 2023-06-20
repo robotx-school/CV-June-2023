@@ -6,7 +6,7 @@ from typing import List
 
 class Visualize:
     def __init__(self) -> None:
-        self.image = cv2.imread("field_base.jpg")
+        self.image = cv2.imread("field_base.png")
         self.image = cv2.resize(self.image, (600, 400))
         # cv2.line(self.image, (22, 0), (22, 793), (20, 0, 255), 1)
         # cv2.line(self.image, (101, 0), (101, 793), (20, 0, 255), 1)

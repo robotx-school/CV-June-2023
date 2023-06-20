@@ -3,7 +3,8 @@ import numpy as np
 
 ARUCO_DICT = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50)
 
-HOST_IP = "192.168.2.237"
+HOST_IP = "192.168.0.222"
+#HOST_IP = "192.168.2.237"
 HOST_PORT = 9988
 
 ROBOT1 = {"ip":"192.168.0.10",

@@ -20,3 +20,5 @@ def find_robot(robot_zone_img):
         return dafk[0][0], dafk[0][len(dafk[0]) - 1]
     else:
         return None, None
+
+
