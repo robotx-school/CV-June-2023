@@ -31,6 +31,7 @@ import urx, time
 import numpy as np
 import math3d as m3d
 import time
+from fit_all_img_together import fit_all_img_together
 #from roboctrl import right_robot_control, left_robot_control
 from roboctrl_class import *
 visualizer = Visualize()
@@ -87,7 +88,11 @@ while True:
     else:
         print('no left robot')
         ctrl = roboctrl([6*[None]], [6*[None]],[0,0],[0,0])
-        
+
+    print("img_size", visualizer.image.shape)
+    
+    final = fit_all_img_together(frame, field_img, cv2.cvtColor(visualizer.image, cv2.COLOR_RGBA2RGB))
+    cv2.imshow("final", final)
     cv2.imshow("Visualization", visualizer.image)
     cv2.imshow("field_img",field_img)
     
