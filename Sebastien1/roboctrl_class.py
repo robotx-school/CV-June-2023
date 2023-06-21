@@ -42,14 +42,18 @@ except Exception as e:
 acc = 0.2
 
 class roboctrl:
-    def __init__(self, right_robot_battery, left_robot_battery):
+    def __init__(self, right_robot_battery, left_robot_battery,
+                 mm_coord_right_robot_battery,mm_coord_left_robot_battery):
+        
         self.right_robot_battery = right_robot_battery
         self.left_robot_battery  = left_robot_battery
+        self.mm_coord_right_robot_battery = mm_coord_right_robot_battery
+        self.mm_coord_left_robot_battery  = mm_coord_right_robot_battery
         
     
     def right_robot_control(self):
-            if right_robot_battery is not [[6*None]]:
-                    lx, ly, lz = angle_gripper(right_robot_battery[0][1])
+            if self.right_robot_battery is not [6*[None]]:
+                    lx, ly, lz = angle_gripper(self.right_robot_battery[0][1])
                     robot.movel([get_l_manup_cords(mm_coord_right_robot_battery)[0],
                                  get_l_manup_cords(mm_coord_right_robot_battery)[1], 0.30,
                                  lx, ly, 0] , 0.1 , 0.2, wait = True)
@@ -66,7 +70,7 @@ class roboctrl:
                     robotiqgrip.gripper_action(0)
                     time.sleep(2)
                     # pick up charged marker and place on robot
-                    lx, ly, lz = angle_gripper(right_robot_battery[0][1])
+                    lx, ly, lz = angle_gripper(self.right_robot_battery[0][1])
                     robot.mover([0.1108634530794939, -0.08892304885884085, 0.3385760801340761,
                                   2.156131292945468, 2.207640399842002, -0.023220213819268334],
                                  0.1 , 0.2, wait = True)
@@ -85,8 +89,8 @@ class roboctrl:
                                  0.1 , 0.2, wait = True)
 
     def left_robot_control(self):
-            if left_robot_battery is not [[6*None]]:
-                    lx, ly, lz = angle_gripper(left_robot_battery[0][1])
+            if self.left_robot_battery is not [6*[None]]:
+                    lx, ly, lz = angle_gripper(self.left_robot_battery[0][1])
                     robot.movel([get_l_manup_cords(mm_coord_left_robot_battery)[0],
                                  get_l_manup_cords(mm_coord_left_robot_battery)[1], 0.30,
                                  lx, ly, 0] , 0.1 , 0.2, wait = True)
@@ -103,7 +107,7 @@ class roboctrl:
                     robotiqgrip.gripper_action(0)
                     time.sleep(2)
                     # pick up charged marker and place on robot
-                    lx, ly, lz = angle_gripper(left_robot_battery[0][1])
+                    lx, ly, lz = angle_gripper(self.left_robot_battery[0][1])
                     robot.mover([0.1108634530794939, -0.08892304885884085, 0.3385760801340761,
                                   2.156131292945468, 2.207640399842002, -0.023220213819268334],
                                  0.1 , 0.2, wait = True)

@@ -31,7 +31,7 @@ import urx, time
 import numpy as np
 import math3d as m3d
 import time
-from roboctrl import right_robot_control, left_robot_control
+#from roboctrl import right_robot_control, left_robot_control
 from roboctrl_class import *
 visualizer = Visualize()
 
@@ -57,9 +57,7 @@ while True:
         visualizer.draw_robot([(330, robot_right_top), (520, robot_right_bottom)])
     if robot_left_top is not None:
         visualizer.draw_robot([(110, robot_left_top), (310, robot_left_bottom)])
-
     
-        
     right_robot_battery = find_robot_battery(image_set['robot_right'],17, ARUCO_DICT)
     left_robot_battery = find_robot_battery(image_set['robot_left'],17, ARUCO_DICT)
     
@@ -70,9 +68,11 @@ while True:
         print("mm_coord_right_robot_battery",mm_coord_right_robot_battery)
         left_manip_coord_right_robot_battery = get_l_manup_cords(mm_coord_right_robot_battery)
         right_manip_coord_right_robot_battery = get_r_manup_cords(mm_coord_right_robot_battery)
-        visualizer.draw_marker(mm_coord_right_robot_battery[0],mm_coord_right_robot_battery[1], 17, right_robot_battery[0][1])                                                         
+        visualizer.draw_marker(mm_coord_right_robot_battery[0],mm_coord_right_robot_battery[1], 17, right_robot_battery[0][1])
+        ctrl = roboctrl(right_robot_battery, [6*[None]],mm_coord_right_robot_battery,[0,0])
     else:
         print('no right robot')
+        ctrl = roboctrl([6*[None]], [6*[None]],[0,0],[0,0])
     
 
     if left_robot_battery[0][0] is not None:
@@ -83,8 +83,10 @@ while True:
         left_manip_coord_left_robot_battery = get_l_manup_cords(mm_coord_left_robot_battery)
         right_manip_coord_left_robot_battery = get_r_manup_cords(mm_coord_left_robot_battery)
         visualizer.draw_marker(mm_coord_left_robot_battery[0],mm_coord_left_robot_battery[1], 17, left_robot_battery[0][1])                                                         
+        ctrl = roboctrl([6*[None]], left_robot_battery,[0,0],mm_coord_left_robot_battery)
     else:
         print('no left robot')
+        ctrl = roboctrl([6*[None]], [6*[None]],[0,0],[0,0])
         
     cv2.imshow("Visualization", visualizer.image)
     cv2.imshow("field_img",field_img)
@@ -97,9 +99,10 @@ while True:
 
     print("angle",right_robot_battery[0][1])
     print("robot right top",robot_right_top)
-    ctrl = roboctrl(right_robot_battery, left_robot_battery)
-    ctrl.right_robot_control()
-    ctrl.left_robot_control()
+    #                   
+    #ctrl.right_robot_control()
+    #ctrl.left_robot_control()
+    
     '''
     if __name__ == '__main__':
         ctrl = roboctrl(right_robot_battery, left_robot_battery)
