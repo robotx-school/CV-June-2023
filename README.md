@@ -24,6 +24,14 @@ NEW new new [-0.28428449723402716, -0.024277914682766813, 0.007963561950132897, 
 
 NEW NEW NEW [-0.4758133317149359, -0.013309899026782373, 0.016564717449064903, 0.12102546384447847, -3.1062037206082733, -0.03356842297038076]
 
+Code NEW NEW NEW NEW 
+```python
+elif psize == 47:  # It's 47 bytes in 3.5
+                    self.version = (3, 5)
+                    allData['RobotModeData'] = self._get_data(pdata, "!IBQ???????BBddB", ("size", "type", "timestamp", "isPhysicalRobotConnected", "isRealRobotEnabled", "isPowerOnRobot", "isEmergencyStopped", "isSecurityStopped", "isProgramRunning", "isProgramPaused", "robotMode", "controlMode", "speedFraction", "speedScaling", "speedFractionLimit", "ur_private"))
+```
+
+
 robotleft = {"home": {"x": 0.1108634530794939,
                       "y": -0.08892304885884085,
                       "z": 0.3385760801340761,
