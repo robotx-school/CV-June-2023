@@ -32,6 +32,9 @@ elif psize == 47:  # It's 47 bytes in 3.5
 ```
 
 
+https://github.com/jkur/python-urx/tree/SW3.5/urx
+
+
 robotleft = {"home": {"x": 0.1108634530794939,
                       "y": -0.08892304885884085,
                       "z": 0.3385760801340761,
