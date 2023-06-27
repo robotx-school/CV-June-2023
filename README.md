@@ -35,13 +35,6 @@ NEW HOME REMASTERED [-0.043455989982085455, -0.1146639612179952, 0.2848006787232
 
 NEW REM [-0.09542968205108449, -0.11156181953444894, 0.2432468917941961, 3.1202055679757565, -0.030541015231948593, 0.1070864809095149]
 
-Code NEW NEW NEW NEW 
-```python
-elif psize == 47:  # It's 47 bytes in 3.5
-                    self.version = (3, 5)
-                    allData['RobotModeData'] = self._get_data(pdata, "!IBQ???????BBddB", ("size", "type", "timestamp", "isPhysicalRobotConnected", "isRealRobotEnabled", "isPowerOnRobot", "isEmergencyStopped", "isSecurityStopped", "isProgramRunning", "isProgramPaused", "robotMode", "controlMode", "speedFraction", "speedScaling", "speedFractionLimit", "ur_private"))
-```
-
 
 https://github.com/jkur/python-urx/tree/SW3.5/urx
 
