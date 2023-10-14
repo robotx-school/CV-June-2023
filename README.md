@@ -1,6 +1,7 @@
 <p align="center">
   <img src="https://github.com/robotx-school/CV-June-2023/assets/55328925/e58269e7-b8c8-47d0-87b2-4d4201da2d61" width="300"/>
 </p>
+<img width="1600" alt="Screenshot 2023-10-15 at 00 28 58" src="https://github.com/robotx-school/CV-June-2023/assets/78224185/cf7d7942-4895-40e6-9be4-a7704469bfdc">
 
 # CV June 2023
   OUR PRESENTATION
